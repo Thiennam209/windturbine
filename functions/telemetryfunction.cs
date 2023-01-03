@@ -48,6 +48,7 @@ namespace My.Function
                     var updateProperty = new JsonPatchDocument();
                     updateProperty.AppendReplace("/Alert", alert.Value<bool>());
                     updateProperty.AppendReplace("/TurbineID", ID.Value<string>());
+                    
                     log.LogInformation(updateProperty.ToString());
                     try
                     {

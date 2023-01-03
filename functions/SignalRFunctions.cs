@@ -77,7 +77,14 @@ namespace SignalRFunctions
                     var property = new Dictionary<object, object>
                     {
                         {"TurbineID", turbineId },
-                        {"Alert", alert }
+                        {"Alert", alert },
+                        {"TimeInterval", timeInterval },
+                        {"Description", description },
+                        {"Code", code },
+                        {"WindSpeed", windSpeed },
+                        {"Ambient", temperature },
+                        {"Rotor", rotorRPM },
+                        {"Power", power }
                     };
                     return signalRMessages.AddAsync(
                         new SignalRMessage
