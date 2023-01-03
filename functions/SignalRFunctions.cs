@@ -62,12 +62,12 @@ namespace SignalRFunctions
                 try
                 {
                     turbineId = eventGridEvent.Subject;
-                    
+
                     var data = eventGridData.SelectToken("data");
                     var patch = data.SelectToken("patch");
-                    foreach(JToken token in patch)
+                    foreach (JToken token in patch)
                     {
-                        if(token["path"].ToString() == "/Alert")
+                        if (token["path"].ToString() == "/Alert")
                         {
                             alert = token["value"].ToObject<bool>();
                         }
@@ -77,7 +77,14 @@ namespace SignalRFunctions
                     var property = new Dictionary<object, object>
                     {
                         {"TurbineID", turbineId },
-                        {"Alert", alert }
+                        {"Alert", alert },
+                        {"TimeInterval", timeInterval },
+                        {"Description", description },
+                        {"Code", code },
+                        {"WindSpeed", windSpeed },
+                        {"Ambient", temperature },
+                        {"Rotor", rotorRPM },
+                        {"Power", power }
                     };
                     return signalRMessages.AddAsync(
                         new SignalRMessage
