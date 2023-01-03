@@ -93,6 +93,13 @@ namespace My.Function
                         ["Power"] = Power
                     };
                     updateProperty.AppendAdd("/TurbineID", ID.Value<string>());
+                    updateProperty.AppendAdd("/TimeInterval", TimeInterval.Value<string>());
+                    updateProperty.AppendAdd("/Description", Description.Value<string>());
+                    updateProperty.AppendAdd("/Code", Code.Value<int>());
+                    updateProperty.AppendAdd("/WindSpeed", WindSpeed.Value<double>());
+                    updateProperty.AppendAdd("/Ambient", Ambient.Value<double>());
+                    updateProperty.AppendAdd("/Rotor", Rotor.Value<double>());
+                    updateProperty.AppendAdd("/Power", Power.Value<double>());
 
                     log.LogInformation(updateProperty.ToString());
                     try
